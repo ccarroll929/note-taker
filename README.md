@@ -1,35 +1,26 @@
-# note-taker
-This application allows users to write and save notes using Express.js back end to save and retrieve note data from a JSON file. 
 
-## User Story
-- GIVEN a note-taking application
-- WHEN I open the Note Taker
-- THEN I am presented with a landing page with a link to a notes page
-- WHEN I click on the link to the notes page
-- THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-- WHEN I enter a new note title and the note’s text
-- THEN a "Save Note" button and a "Clear Form" button appear in the navigation at the top of the page
-- WHEN I click on the Save button
-- THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes and the buttons in the navigation disappear
-- WHEN I click on an existing note in the list in the left-hand column
-- THEN that note appears in the right-hand column and a "New Note" button appears in the navigation
-- WHEN I click on the "New Note" button in the navigation at the top of the page
-- THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
+# Title: Express.js Note Taker
 
-## The following HTML routes should be created:
+## Description
+  This application allows users to write, save, and delete notes for them to refer back to later. Express.js back end is used in order to save and retrieve note data from a JSON file.
 
-- GET /notes should return the notes.html file.
-- GET * should return the index.html file.
+### Link to Deployed Heroku App
+* [https://ccarroll-note-taker-804809c1add9.herokuapp.com/](https://ccarroll-note-taker-804809c1add9.herokuapp.com/)
 
-## The following API routes should be created:
+### ![Screenshot 1](./public/assets/images/deployed-ss-00.png)
+### ![Screenshot 2](./public/assets/images/deployed-ss-01.png)
 
-- GET /api/notes should read the db.json file and return all saved notes as JSON.
-- POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. </br>
-  You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
+## Installation
+[Node.js](https://nodejs.org/en/download) and npm install 
 
-## Bonus
-You haven’t learned how to handle DELETE requests, but this application has that functionality in the front end. As a bonus, see if you can add the DELETE route to the application using the following guideline:
+## Usage
+Click the link to the deployed application on Heroku.
 
-- DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
+## Contributing
+Fork the repository to contribute to the code
 
- [Link to Deployed Heroku App (click here)](https://ccarroll-note-taker-804809c1add9.herokuapp.com/)
+## Questions
+Contact info:
+[GitHub Username](https://github.com/ccarroll929) 
+</br>
+[Email: ccarroll0528@gmail.com](mailto:ccarroll0528@gmail.com)
