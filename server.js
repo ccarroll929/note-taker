@@ -13,22 +13,21 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
+// Getting the routes needed 
 app.get('/api/notes', (req, res) => {
     res.json(allNotes.slice(1));
 });
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
-
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 }); 
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+// Function to create a new note and write it to the json file
 function createNewNote(body, notesArray) {
     const newNote = body; 
     if (!Array.isArray(notesArray))
@@ -48,11 +47,13 @@ function createNewNote(body, notesArray) {
     return newNote;
 }
 
+// Post request initiates the callback function createNewNote
 app.post('/api/notes', (req, res) => {
     const newNote = createNewNote(req.body, allNotes);
     res.json(newNote);
 });
 
+// Function to delete notes from the list
 function deleteNote(id, notesArray) {
     for (let i = 0; i < notesArray.length; i++) {
         let note = notesArray[i];
@@ -69,11 +70,13 @@ function deleteNote(id, notesArray) {
     }
 }
 
+// Delete request initiates callback function deleteNote
 app.delete('/api/notes/:id', (req, res) => {
     deleteNote(req.params.id, allNotes);
     res.json(true);
 });
 
+// Listening at PORT 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`);
 })
